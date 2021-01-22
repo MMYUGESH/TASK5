@@ -17,7 +17,7 @@ request.onload = function () {
         request1.onload = function () {
             var wedata = JSON.parse(this.response);
 
-            console.log(wedata.sys, wedata.main);
+            console.log(wedata.main);
 
 
 
@@ -27,7 +27,10 @@ request.onload = function () {
 
         }
     });
+    try {
+        wedata.main === undefined
+    }
+    catch (error) {
+        alert(error.name);
+    }
 }
-
-
-
